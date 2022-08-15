@@ -26,7 +26,6 @@
       },
       "notFound": "Conference not found",
       "deleted": "Conference deleted",
-      "id": "ID",
       "id": "entities.conference.id",
       "name": "entities.conference.name",
       "location": "entities.conference.location"

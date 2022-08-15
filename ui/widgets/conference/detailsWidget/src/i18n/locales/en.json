@@ -11,7 +11,6 @@
   },
   "entities": {
     "conference": {
-      "id": "ID",
       "id": "entities.conference.id",
       "name": "entities.conference.name",
       "location": "entities.conference.location"
