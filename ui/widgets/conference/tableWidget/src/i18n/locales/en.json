@@ -8,7 +8,8 @@
     "download": "Download file",
     "dataDeleted": "Conference successfully deleted",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "delete": ""
   },
   "pagination": {
     "ariaLabels": {
@@ -40,7 +41,6 @@
         "description": "Are you sure?"
       },
       "noItems": "No conferences available",
-      "id": "ID",
       "id": "entities.conference.id",
       "name": "entities.conference.name",
       "location": "entities.conference.location"
