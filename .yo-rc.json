@@ -1,0 +1,56 @@
+{
+  "generator-jhipster": {
+    "blueprints": [
+      {
+        "name": "generator-jhipster-entando",
+        "version": "7.0.1"
+      }
+    ],
+    "otherModules": [
+      {
+        "name": "generator-jhipster-entando",
+        "version": "7.0.1"
+      }
+    ],
+    "applicationType": "microservice",
+    "baseName": "conference",
+    "jhipsterVersion": "7.2.0",
+    "skipClient": true,
+    "withAdminUi": false,
+    "skipUserManagement": true,
+    "skipServer": false,
+    "skipCheckLengthOfIdentifier": false,
+    "skipFakeData": false,
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "testFrameworks": [],
+    "pages": [],
+    "creationTimestamp": 1660592667401,
+    "serviceDiscoveryType": false,
+    "reactive": false,
+    "authenticationType": "oauth2",
+    "packageName": "com.mycompany.myapp",
+    "serverPort": "8081",
+    "cacheProvider": "caffeine",
+    "enableHibernateCache": true,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "buildTool": "maven",
+    "serverSideOptions": [],
+    "websocket": false,
+    "searchEngine": false,
+    "messageBroker": false,
+    "enableSwaggerCodegen": false,
+    "microserviceDependencies": "entando",
+    "bundleName": "e70-conference-bundle",
+    "dockerImageOrganization": "entandodemo",
+    "generateMicroFrontends": "always",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "jwtSecretKey": "MDkyMGNkZGYzYjlkMjczNDBkZmZmODljZTdmZTk5NjUzMGExOGJlODhmZjYxOTM3NDJmNjRlMmExOTdmZTU1ODhlYjNiZDZlZTdlYmEzZjYyYjg4ZmVkOGI1NzEwZWRkNjk5ZmU0MDNmMTE2MjBiZTdkYzgxZDYyMTZkNjE1ZGU=",
+    "languages": ["en"],
+    "enableGradleEnterprise": false
+  }
+}
