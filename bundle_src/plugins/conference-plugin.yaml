@@ -1,5 +1,5 @@
 descriptorVersion: v4
-image: entandodemo/conference:0.0.1-SNAPSHOT
+image: entandodemo/conference:0.0.2-SNAPSHOT
 dbms: postgresql
 healthCheckPath: "/management/health"
 roles:
