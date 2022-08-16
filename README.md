@@ -1,4 +1,33 @@
-# conference
+# JHipster Conference sample application
+This project was built based on a couple of standard Entando tutorials for Entando 7.0
+1. https://developer.entando.com/v7.0/tutorials/create/ms/generate-microservices-and-micro-frontends.html
+2. https://developer.entando.com/v7.0/tutorials/create/ms/add-access-controls.html
+   * Partial - only the Delete Conference action is protected in both the MFE and MS. A user with conference-admin role has permission to use this action.
+
+This project is ent-enabled so you can use the ent cli (https://developer.entando.com/v7.0/docs/reference/entando-cli.html) to perform the full build and deployment sequence.
+
+## Setup and Deploy
+### Setup the project directory.
+1. Prepare the bundle directory: `cp -r bundle_src bundle`
+2. Initialize the project: `ent prj init` (use entando-hub to match the bundle name in the integration environment)
+3. Initialize publication: `ent prj pbs-init` (requires the git bundle repo url)
+
+### Publish the bundle.
+1. Build: `ent prj build` (build the frontend and backend) or `ent prj fe-build -a` (to just build the frontend, including changes from bundle_src)
+2. Publish: `ent prj pub` or `ent prj fe-push` (publish all or just the frontend)
+3. Deploy (after connecting to k8s): `ent prj deploy`
+4. Install the bundle via 1) App Builder, 2) `ent prj install`, or 3) `ent prj install --conflict-strategy=OVERRIDE` on subsequent installs.
+5. Iterate steps 1-4 to publish new versions.
+
+## Local development
+* `ent prj xk start`
+  * Keycloak: http://localhost:9080/auth/
+* `ent prj be-test-run`
+  * OpenAPI/Swagger: http://localhost:8081/swagger-ui/index.html
+* `ent prj fe-test-run` 
+  * React FE: http://localhost:3000/
+
+# Standard Blueprint Notes
 
 This application was generated using JHipster 7.2.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.2.0](https://www.jhipster.tech/documentation-archive/v7.2.0).
 
