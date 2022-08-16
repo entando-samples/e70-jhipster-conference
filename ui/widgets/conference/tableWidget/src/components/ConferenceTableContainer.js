@@ -21,6 +21,7 @@ import { apiConferencesGet, apiConferencesDelete } from 'api/conferences';
 import { reducer, initialState } from 'state/conference.reducer';
 import { ADD_FILTER, UPDATE_FILTER, DELETE_FILTER, CLEAR_FILTERS } from 'state/filter.types';
 import { DELETE, ERROR_FETCH, CLEAR_ERRORS, READ_ALL, CLEAR_ITEMS } from 'state/conference.types';
+import {hasKeycloakClientRole} from 'api/helpers';
 
 const styles = {
   fab: {
@@ -185,7 +186,7 @@ class ConferenceTableContainer extends Component {
     const deleteLabel = t('common.delete');
 
     //CUSTOM START - check permissions for the delete action
-    const isAdmin = (keycloak && keycloak.authenticate) ? keycloak.hasResourceRole("conference-admin", "internal"): false;
+    const isAdmin = hasKeycloakClientRole('conference-admin');
     const showDelete = onDelete && isAdmin;
     //CUSTOM END
 
