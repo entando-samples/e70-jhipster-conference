@@ -14,13 +14,17 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
 
-@Component
+//FIX for @Value - @Component
 public class JwtGrantedAuthorityConverter implements Converter<Jwt, Collection<GrantedAuthority>> {
 
-    @Value("${spring.security.oauth2.client.registration.oidc.client-id:'internal'}")
+    //CUSTOM START - fix for @Value failing to inject
+    //    @Value("${spring.security.oauth2.client.registration.oidc.client-id}")
     private String clientId;
 
-    public JwtGrantedAuthorityConverter() {}
+    public JwtGrantedAuthorityConverter(String clientId) {
+        this.clientId = clientId;
+    }
+    //CUSTOM END
 
     @Override
     public Collection<GrantedAuthority> convert(Jwt jwt) {

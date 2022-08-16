@@ -36,6 +36,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Value("${spring.security.oauth2.client.provider.oidc.issuer-uri}")
     private String issuerUri;
 
+    //CUSTOM Fix for @Value issue on JwtGrantedAuthorityConverter
+    @Value("${spring.security.oauth2.client.registration.oidc.client-id}")
+    private String clientId;
+    //CUSTOM END
+
     private final SecurityProblemSupport problemSupport;
 
     public SecurityConfiguration(JHipsterProperties jHipsterProperties, SecurityProblemSupport problemSupport) {
@@ -94,7 +99,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     Converter<Jwt, AbstractAuthenticationToken> authenticationConverter() {
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
-        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new JwtGrantedAuthorityConverter());
+        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new JwtGrantedAuthorityConverter(clientId));
         return jwtAuthenticationConverter;
     }
 
